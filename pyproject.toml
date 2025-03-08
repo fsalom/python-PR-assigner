@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 uvicorn = "^0.32"
+fastapi = "^0.115"
+dependency-injector = "^4.45"
 
 
 [build-system]
