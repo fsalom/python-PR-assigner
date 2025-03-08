@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "python-PR-assigner"
+version = "0.1.0"
+description = ""
+authors = ["Fernando Salom <fer@rudo.es>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.32"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
