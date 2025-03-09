@@ -10,6 +10,7 @@ python = "^3.11"
 uvicorn = "^0.32"
 fastapi = "^0.115"
 dependency-injector = "^4.45"
+pydantic = "^2.10"
 
 
 [build-system]
