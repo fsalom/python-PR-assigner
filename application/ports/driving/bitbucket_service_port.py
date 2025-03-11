@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from domain.actor import User
+from domain.user import User
 from domain.webhook_payload import WebhookPayload
 
 
