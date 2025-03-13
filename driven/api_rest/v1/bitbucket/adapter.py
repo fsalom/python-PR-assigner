@@ -1,3 +1,4 @@
+import os
 from base64 import b64encode
 from typing import List
 
@@ -14,15 +15,13 @@ from driven.api_rest.v1.slack.models import OAUTH2Response
 class BitbucketRepositoryAdapter(BitbucketRepositoryPort):
     BITBUCKET_URL_WORKSPACE = "https://api.bitbucket.org/2.0/workspaces"
     BITBUCKET_URL = "https://bitbucket.org/site/oauth2/access_token"
-    CLIENT_ID = "hZVH5esUUkaRyxQKbz"
-    CLIENT_SECRET = "wsakSb9UX5wkGbNkcNxMbBCRjjc5kV4D"
     WORKSPACE = "rudoapps"
 
     def __init__(self, mapper: BitbucketMapper):
         self.mapper = mapper
 
     async def get_access_token(self) -> str:
-        credentials = f"{self.CLIENT_ID}:{self.CLIENT_SECRET}"
+        credentials = f"{os.getenv('CLIENT_ID')}:{os.getenv('CLIENT_SECRET')}"
         encoded_credentials = b64encode(credentials.encode()).decode()
 
         headers = {
