@@ -8,8 +8,7 @@ from fastapi import HTTPException
 from application.ports.driven.bitbucket_repository_port import BitbucketRepositoryPort
 from domain.user import User
 from driven.api_rest.v1.bitbucket.mapper import BitbucketMapper
-from driven.api_rest.v1.bitbucket.models import BitbucketResponse
-from driven.api_rest.v1.slack.models import OAUTH2Response
+from driven.api_rest.v1.bitbucket.models import BitbucketResponse, OAUTH2Response
 
 
 class BitbucketRepositoryAdapter(BitbucketRepositoryPort):
