@@ -1,14 +1,6 @@
-from typing import Dict, Optional
-
-from pydantic import BaseModel, HttpUrl
-
-from domain.branch import Branch
-from domain.actor import User
-
-
-class PullRequestLinks(BaseModel):
-    self: Dict[str, HttpUrl]
-    html: Dict[str, HttpUrl]
+from typing import Optional
+from pydantic import BaseModel
+from domain.user import User
 
 
 class PullRequest(BaseModel):
@@ -17,6 +9,3 @@ class PullRequest(BaseModel):
     description: Optional[str]
     state: str
     author: User
-    source: Dict[str, Branch]
-    destination: Dict[str, Branch]
-    links: PullRequestLinks
