@@ -3,16 +3,16 @@ from typing import Literal, Optional, Dict
 from pydantic import BaseModel, HttpUrl
 
 
-class BranchResponse(BaseModel):
+class BranchRequest(BaseModel):
     name: str
 
 
-class PullRequestLinksResponse(BaseModel):
+class PullRequestLinksRequest(BaseModel):
     self: Dict[str, HttpUrl]
     html: Dict[str, HttpUrl]
 
 
-class UserDrivingResponse(BaseModel):
+class UserDrivingRequest(BaseModel):
     display_name: str
     type: str
     uuid: str
@@ -20,32 +20,32 @@ class UserDrivingResponse(BaseModel):
     nickname: str
 
 
-class PullRequestResponse(BaseModel):
+class PullRequestRequest(BaseModel):
     id: int
     title: str
     description: Optional[str]
     state: str
-    author: UserDrivingResponse
-    source: Dict[str, BranchResponse]
-    destination: Dict[str, BranchResponse]
-    links: PullRequestLinksResponse
+    author: UserDrivingRequest
+    source: Dict[str, BranchRequest]
+    destination: Dict[str, BranchRequest]
+    links: PullRequestLinksRequest
 
 
-class RepositoryResponse(BaseModel):
+class RepositoryRequest(BaseModel):
     name: str
     full_name: str
     uuid: str
     links: Dict[str, Dict[str, HttpUrl]]
 
 
-class ActorResponse(BaseModel):
+class ActorRequest(BaseModel):
     display_name: str
     uuid: str
     nickname: Optional[str]
 
 
-class WebhookPayloadResponse(BaseModel):
-    actor: ActorResponse
-    repository: RepositoryResponse
-    pullrequest: PullRequestResponse
+class WebhookPayloadRequest(BaseModel):
+    actor: ActorRequest
+    repository: RepositoryRequest
+    pullrequest: PullRequestRequest
     event: str
