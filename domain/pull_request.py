@@ -8,4 +8,4 @@ class PullRequest(BaseModel):
     title: str
     description: Optional[str]
     state: str
-    author: User
+    author: str
